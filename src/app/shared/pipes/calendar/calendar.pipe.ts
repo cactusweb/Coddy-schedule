@@ -51,7 +51,6 @@ export class CalendarPipe implements PipeTransform {
     returnArr.push(countStartNullDay);
 
 
-    console.log(returnArr)
     return returnArr;
   }
 

@@ -44,7 +44,6 @@ export class TableComponent implements OnInit {
     await this.http.getLessons()
     .then( items => {
       this.lessons = this.setValidTime(items);
-      this.metroStations = this.getAllMetro(items);
       // this.getAllTimes(this.lessons);
       let date = new Date();
       // this.lessons = this.calendarPipe.transform(this.lessons, 11);
@@ -87,7 +86,6 @@ export class TableComponent implements OnInit {
         let alreadySet = false;
         if ( i == 0 && arr[i]["Метро"]){
           returnArr.push(arr[i]["Метро"]);
-          console.log('first');
         }
         else if (arr[i]["Метро"]){
           for (let k = 0; k < returnArr.length; k++){

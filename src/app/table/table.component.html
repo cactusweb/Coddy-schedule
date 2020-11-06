@@ -240,7 +240,7 @@
         'active': day[0].date == activeDate
       }">
 
-        <span class="date" *ngIf='(day[0].date || day[0].date === 0) && day[0].date > 10'>
+        <span class="date" *ngIf='(day[0].date || day[0].date === 0) && day[0].date >= 10'>
           {{ day[0].date }}
         </span>
         <span class="date" *ngIf='(day[0].date || day[0].date === 0) && 10 > day[0].date'>
@@ -249,7 +249,7 @@
 
         <div class="info">
 
-          <span class="time">{{ day[0]['Время'] }}</span>
+          <span class="time">{{ day[0]['Время'] }} {{ index }} </span>
 
           <span class="name">{{ day[0]['Название'] }}</span>
 
@@ -281,11 +281,11 @@
       <div class="day-lessons"
        *ngIf="day[0] && day[0].day !== -1 && day[0]['Название']"
        [ngClass]="{
-          'row-1': 7 > index, 
-          'row-2': index > 7 && 15 > index, 
-          'row-3': index > 14 && 22 > index,
-          'row-4': index > 21 && 29 > index,
-          'row-5': index > 28 && 35 > index,
+          'row-1': 6 > index, 
+          'row-2': index >= 7 && 14 > index, 
+          'row-3': index >= 14 && 21 > index,
+          'row-4': index >= 21 && 28 > index,
+          'row-5': index >= 28 && 35 > index,
           'active': day[0].date == activeDate 
         }"
       >
