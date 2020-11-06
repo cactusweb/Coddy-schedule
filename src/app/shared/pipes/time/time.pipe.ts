@@ -4,20 +4,34 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'time'
 })
 export class TimePipe implements PipeTransform {
-  transform(arr: any = [{}], paramsTime: any = [], change: boolean): unknown {
-  if ( paramsTime[0] != null && paramsTime[0] !== '' && paramsTime[0] != undefined){
-      let filter = arr.filter(
-        ell =>{
-              for (let k = 0; k < paramsTime.length; k++){
-              if (ell.time && ell.time == paramsTime[k]){return true;}
-              else if (k == paramsTime.length - 1){return false;}
-            }
-      });
+  transform(arr: any = [{}], time: any = []): unknown {
+    
+    if ( time != '0' ){
+
+      let filtRange = this.getGapTime(time);
+      let filter = arr.filter( ell => {
+
+        console.log(this.getGapTime(ell["Время"]))
+        return filtRange.start <= this.getGapTime(ell["Время"]).start && filtRange.end >= this.getGapTime(ell["Время"]).start
+
+      }
+
+      )
+
       return filter;
     }
 
     return arr;
     
+  }
+
+  
+  getGapTime(range){
+    let nums = range.split('-');
+    let start = Number(nums[0].split(':').join(''));
+    let end = Number(nums[1].split(':').join(''));
+
+    return {start: start, end: end}
   }
 
 }

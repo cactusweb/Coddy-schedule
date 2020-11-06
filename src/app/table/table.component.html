@@ -1,0 +1,329 @@
+<!-- <table>
+    <thead>
+      <tr class="pipes">
+        <td>
+          <span> <a class="btn primary">Формат</a> 
+            <ul>
+              <li><input type="checkbox" id="online" [(ngModel)]="filtering.online"><label for="online">Online</label></li>
+              <li><input type="checkbox" id="offline" [(ngModel)]="filtering.offline"><label for="offline">Offline</label></li>
+            </ul>
+          </span>
+        </td>
+        <td>
+          <span>Метро
+            <ul class="metro" *ngIf="metroStations[0]">
+              <li *ngFor="let station of metroStations"><input type="checkbox" [name]="station" [id]="station" (ngModel)='metroModel' (ngModelChange)="onChangeMetro(station)"><label [for]="station">{{station}}</label></li>
+            </ul>
+          </span>
+        </td>
+        <td>
+          <span class="direction">
+            Направление
+            <ul>
+              <li class="newUl">Программирование:
+                <ul>
+                  <li><input type="checkbox" id="games" [(ngModel)]="filtering.heading.games" (ngModelChange)="onChangeHeading()"><label for="games">Игры</label></li>
+                  <li><input type="checkbox" [(ngModel)]="filtering.heading.sites" (ngModelChange)="onChangeHeading()" id="sites"><label for="sites">Сайты</label></li>
+                  <li><input type="checkbox" [(ngModel)]="filtering.heading.applications" (ngModelChange)="onChangeHeading()" id="applications"><label for="applications">Приложения</label></li>
+                  <li><input type="checkbox" [(ngModel)]="filtering.heading.hard" (ngModelChange)="onChangeHeading()" id="hard"><label for="hard">Курсы повышенной сложности</label></li>
+                  <li><input type="checkbox" [(ngModel)]="filtering.heading.python" (ngModelChange)="onChangeHeading()" id="python"><label for="python">Python</label></li>
+                  <li><input type="checkbox" [(ngModel)]="filtering.heading.minecraft" (ngModelChange)="onChangeHeading()" id="minecraft"><label for="minecraft">Minecraft</label></li>
+                </ul>
+              </li>
+              <li><input type="checkbox" [(ngModel)]="filtering.heading.softSkills" (ngModelChange)="onChangeHeading()" id="softSkills"><label for="softSkills">Soft skills</label></li>
+              <li><input type="checkbox" [(ngModel)]="filtering.heading.cybercream" (ngModelChange)="onChangeHeading()" id="cybercream"><label for="cybercream">Кибербезопасность</label></li>
+              <li><input type="checkbox" [(ngModel)]="filtering.heading.design" (ngModelChange)="onChangeHeading()" id="design"><label for="design">Дизайн и творчество</label></li>
+              <li><input type="checkbox" [(ngModel)]="filtering.heading.age18" (ngModelChange)="onChangeHeading()" id="age18"><label for="age18">18+</label></li>
+              <li><input type="checkbox" [(ngModel)]="filtering.heading.age45" (ngModelChange)="onChangeHeading()" id="age45"><label for="age45">45+</label></li>
+            </ul>
+          </span>
+        </td>
+        <td>
+          <input type="text" placeholder="Курс" [(ngModel)]="filtering.name">
+        </td>
+        <td><input class="age" type="text" mask='00' [(ngModel)]="filtering.age"></td>
+        <td> <input class="date" type="text" [dropSpecialCharacters]="false" mask="00.00" [showMaskTyped]="true" [(ngModel)]="filtering.date"></td>
+        <td>
+          <span>
+            Время
+            <ul class="time" *ngIf="times[0]">
+              <li *ngFor="let time of times"><input type="checkbox" [name]="time" [id]="time" (ngModel)='timeModel' (ngModelChange)="onChangeTime(time)"><label [for]="time">{{time}}</label></li>
+              
+            </ul>
+          </span>
+        </td>
+        <td><input type="text" placeholder="Преподаватель" [(ngModel)]="filtering.teacher"></td>
+      </tr>
+  
+  
+    </thead> -->
+    <!-- <tbody *ngIf="lessons[0]">
+  
+      <tr *ngFor="let lesson of lessons 
+      | type : filtering.online : filtering.offline 
+      | teacher : filtering.teacher 
+      | direction : filtering.heading : filtering.heading.change
+      | name : filtering.name
+      | date : filtering.date
+      | age : filtering.age
+      | time : filtering.time : filtering.changeTime 
+      | metro : filtering.metro : filtering.changeMetro,   
+      let index = index" [ngClass]="{'tr1': index%2==0}">
+        <td class="type">{{lesson["Формат"]}}</td>
+        <td class="address">{{lesson["Адрес"]}}</td>
+        <td class="direction"> {{lesson["Направление"]}}</td>
+        <td class="name"><a [href]="lesson['Ссылка на курс']">{{lesson["Название"]}}</a></td>
+        <td class="age"> {{lesson["Возраст"]}}</td>
+        <td class="season">{{lesson["Период"]}}</td>
+        <td class="time">{{lesson["Время"]}}</td>
+        <td class="teacher"> {{lesson["Преподаватель"]}} </td>
+      </tr>
+    </tbody> -->
+  <!-- </table> -->
+
+
+  <div class="pipes">
+
+    <div class="first-row">
+
+      <span name="format" class="btn primary select-btn">
+        <span class="select">{{filtering.formatName}}</span>
+        <div class="options">
+          <div class="before"><span></span></div>
+
+          <ul>
+            <li> <input type="radio" name="format" id="format" value="0" [(ngModel)]="filtering.format" (ngModelChange)="onChangeFormat('Формат')"> <label for="format">Формат</label> </li>
+            <li> <input type="radio" name="format" id="online" value="online" [(ngModel)]="filtering.format" (ngModelChange)="onChangeFormat('Онлайн')"> <label for="online">Онлайн</label> </li>
+            <li> <input type="radio" name="format" id="offline" value="offline" [(ngModel)]="filtering.format" (ngModelChange)="onChangeFormat('Оффлайн')"> <label for="offline">Оффлайн</label> </li>
+          </ul>
+        </div>
+      </span>
+  
+      <span class="btn primary select-btn">
+        <span class="select">{{filtering.directionName}}</span>
+        <span class="after"></span>
+
+        <div class="options">
+          <div class="before"><span></span></div>
+
+          <ul>
+            <li> <input type="radio" name="direction" id="direction" value="0" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Направление')"> <label for="direction">Направление</label> </li>
+            <li> <input type="radio" name="direction" id="games" value="games" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Игры')"> <label for="games">Игры</label> </li>
+            <li> <input type="radio" name="direction" id="sites" value="sites" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Сайты')"> <label for="sites">Сайты</label> </li>
+            <li> <input type="radio" name="direction" id="app" value="app" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Приложения')"> <label for="app">Приложения</label> </li>
+            <li> <input type="radio" name="direction" id="hard" value="hard" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Курсы повышенной сложности')"> <label for="hard">Курсы повышенной сложности</label> </li>
+            <li> <input type="radio" name="direction" id="python" value="python" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Python')"> <label for="python">Python</label> </li>
+            <li> <input type="radio" name="direction" id="minecraft" value="minecraft" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Minecraft')"> <label for="minecraft">Minecraft</label> </li>
+            <li> <input type="radio" name="direction" id="softSkills" value="softSkills" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Soft skills')"> <label for="softSkills">Soft skills</label> </li>
+            <li> <input type="radio" name="direction" id="cybercream" value="cybercream" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Кибербезопасность')"> <label for="cybercream">Кибербезопасность</label> </li>
+            <li> <input type="radio" name="direction" id="design" value="design" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Дизайн и творчество')"> <label for="design">Дизайн и творчество</label> </li>
+            <li> <input type="radio" name="direction" id="age18" value="age18" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('18+')"> <label for="age18">18+</label> </li>
+            <li> <input type="radio" name="direction" id="age45" value="age45" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('45+')"> <label for="age45">45+</label> </li>
+          </ul>
+
+        </div>
+      </span>
+  
+      <span class="btn primary select-btn">
+        <span class="select">
+          {{ filtering.ageName }}
+        </span>
+        <div class="options">
+          <div class="before"><span></span></div>
+          <ul>
+            <li> <input type="radio" name="age" id="age" value="0" [(ngModel)]="filtering.age" (ngModelChange)="onChangeAge('Любой возраст')"><label for="age">Любой возраст</label> </li>
+            <li> <input type="radio" name="age" id="4-7" value="4-7" [(ngModel)]="filtering.age" (ngModelChange)="onChangeAge('Самым маленьким (4-7 лет)')"> <label for="4-7">Самым маленьким (4-7 лет)</label> </li>
+            <li> <input type="radio" name="age" id="7-10" value="7-10" [(ngModel)]="filtering.age" (ngModelChange)="onChangeAge('Средняя школа (11-13 лет)')"> <label for="7-10">Средняя школа (11-13 лет)</label> </li>
+            <li> <input type="radio" name="age" id="14-18" value="14-18" [(ngModel)]="filtering.age" (ngModelChange)="onChangeAge('Старшая школка (14-18 лет)')"> <label for="14-18">Старшая школа (14-18 лет)</label> </li>
+            <li> <input type="radio" name="age" id="18+" value="18+" [(ngModel)]="filtering.age" (ngModelChange)="onChangeAge('Для взрослых (18+)')"> <label for="18+">Для взрослых (18+)</label> </li>
+            <li> <input type="radio" name="age" id="45+" value="45+" [(ngModel)]="filtering.age" (ngModelChange)="onChangeAge('Для взрослых (45+)')"> <label for="45+">Для взрослых (45+)</label> </li>
+          </ul>
+        </div>
+      </span>
+  
+      <div class="start">
+        <label for="start">Старт группы:</label>
+        <input type="text" class="inp" name="start" id="start" placeholder="ДД.ММ" [dropSpecialCharacters]="false" mask="00.00" [(ngModel)]="filtering.date">
+      </div>
+  
+      <span class="btn primary select-btn">
+         <span class="select">
+            {{ filtering.timeName }}
+         </span>
+         <div class="options">
+          <div class="before"><span></span></div>
+          <ul>
+             <li>
+               <input type="radio" value="0" id="time" name="time"  [(ngModel)]="filtering.time" (ngModelChange)="onChangeTime('Время занятий')"><label for="time">Время занятий</label>
+             </li>
+             <li>
+               <input type="radio" value="9:00-12:00" id="morning" name="time" [(ngModel)]="filtering.time" (ngModelChange)="onChangeTime('Утро')"><label for="morning">Утро</label>
+             </li>
+             <li>
+               <input type="radio" value="13:00-16:00" id="day" name="time" [(ngModel)]="filtering.time" (ngModelChange)="onChangeTime('День')"><label for="day">День</label>
+             </li>
+             <li>
+               <input type="radio" value="17:00-20:00" id="evening" name="time" [(ngModel)]="filtering.time" (ngModelChange)="onChangeTime('Вечер')"><label for="evening">Вечер</label>
+             </li>
+          </ul>          
+
+         </div>
+      </span>
+    </div>
+
+    <div>
+      <input type="text" placeholder="Название метро" class="inp" [(ngModel)]='filtering.metro'>
+      <input type="text" placeholder="Название курса" class="inp" [(ngModel)]="filtering.name">
+      <input type="text" placeholder="Преподаватель" class="inp" [(ngModel)]="filtering.teacher">
+    </div>
+
+  </div>
+
+
+  <!-- <tbody *ngIf="lessons[0]">
+  
+    <tr *ngFor="let lesson of lessons 
+    | type : filtering.format 
+    | teacher : filtering.teacher 
+    | direction : filtering.direction
+    | name : filtering.name
+    | date : filtering.date
+    | age : filtering.age
+    | time : filtering.time 
+    | metro : filtering.metro 
+    | calendar : 11
+    let index = index" [ngClass]="{'tr1': index%2==0}">
+      <td class="type">{{lesson["Формат"]}}</td>
+      <td class="address">{{lesson["Адрес"]}}</td>
+      <td class="direction"> {{lesson["Направление"]}}</td>
+      <td class="name"><a [href]="lesson['Ссылка на курс']">{{lesson["Название"]}}</a></td>
+      <td class="age"> {{lesson["Возраст"]}}</td>
+      <td class="season">{{lesson["Период"]}}</td>
+      <td class="time">{{lesson["Время"]}}</td>
+      <td class="teacher"> {{lesson["Преподаватель"]}} </td>
+    </tr>
+  </tbody> -->
+
+
+  <div class="monthes">
+    <div class="circle prev">
+      <img src="/assets/img/main/arrow.png" alt="Назад">
+    </div>
+    <span class="month">Ноябрь</span>
+    <div class="circle next">
+      <img src="/assets/img/main/arrow.png" alt="Вперед">
+    </div>
+  </div>
+
+
+  <div class="calendar">
+
+
+    <ng-container *ngFor="let day of lessons
+      | type : filtering.format 
+      | teacher : filtering.teacher 
+      | direction : filtering.direction
+      | name : filtering.name
+      | date : filtering.date
+      | age : filtering.age
+      | time : filtering.time 
+      | metro : filtering.metro
+      | date : filtering.date
+      | calendar : 11
+        let index = index"
+    >
+
+      <div class="day" *ngIf="day[0]" [ngClass]="{
+        'emptyDay': day[0].day === -1,
+        'weekend': ((index + 1) % 7 === 0 || (index + 2) % 7 === 0),
+        'isLesson':  day[0]['Название'],
+        'active': day[0].date == activeDate
+      }">
+
+        <span class="date" *ngIf='(day[0].date || day[0].date === 0) && day[0].date > 10'>
+          {{ day[0].date }}
+        </span>
+        <span class="date" *ngIf='(day[0].date || day[0].date === 0) && 10 > day[0].date'>
+          0{{ day[0].date }}
+        </span>
+
+        <div class="info">
+
+          <span class="time">{{ day[0]['Время'] }}</span>
+
+          <span class="name">{{ day[0]['Название'] }}</span>
+
+        </div>
+
+        <a *ngIf="day[0]['Название'] && day[0].date != activeDate" (click)="onActiveDate(day[0].date)"> <span>Еще {{ day.length }}</span>  
+          <span *ngIf="
+            ( day.length % 10 == 2 || day.length % 10 == 3 || day.length % 10 == 4 ) && ( 10 > day.length || day.length > 20 ) 
+          ">
+            курса
+          </span>  
+          <span *ngIf=" day.length % 10 == 1 && ( 10 > day.length || day.length > 20 ) ">
+            курс
+          </span>
+          <span *ngIf="
+           !( ( day.length % 10 == 2 || day.length % 10 == 3 || day.length % 10 == 4 ) && ( 10 > day.length || day.length > 20 ) )
+           &&
+           !(day.length % 10 == 1 && ( 10 > day.length || day.length > 20 ))
+          ">
+            курсов
+          </span>
+
+          >></a>
+        <a *ngIf="day[0]['Название'] && day[0].date == activeDate" (click)="onActiveDate(day[0].date)"><span>Свернуть</span></a>
+        <a class="default-cursor" *ngIf="!day[0]['Название'] && day[0].day !== -1"> Нет занятий </a>
+      </div>
+
+
+      <div class="day-lessons"
+       *ngIf="day[0] && day[0].day !== -1 && day[0]['Название']"
+       [ngClass]="{
+          'row-1': 7 > index, 
+          'row-2': index > 7 && 15 > index, 
+          'row-3': index > 14 && 22 > index,
+          'row-4': index > 21 && 29 > index,
+          'row-5': index > 28 && 35 > index,
+          'active': day[0].date == activeDate 
+        }"
+      >
+          
+          <div class="lesson" *ngFor="let lesson of day">
+
+            <span class="directionImg">
+              <img  *ngIf="lesson['Направление'] == 'Дизайн и творчество'" src="/assets/img/table/games.png">
+              <img  *ngIf="lesson['Направление'] !== 'Дизайн и творчество'" src="/assets/img/table/other.png">
+
+            </span>
+            <span class="date">{{ lesson['Время'] }}</span>
+            <span class="direction">{{ lesson['Направление'] }}</span>
+            <span class="name">{{ lesson['Название'] }}</span>
+            <span class="age"> <span class="dataName">Возраст:</span> {{ lesson['Возраст'] }}</span>
+            <span class="teacher"> <span class="dataName">Преподаватель:</span> {{ lesson['Преподаватель'] }} </span>
+            <span class="address"> {{ lesson['Адрес'] }} </span>
+
+            <span class="btns">
+              <a [href]="lesson['Ссылка на курс']" target="_blank">Подробнее о курсе</a>
+              <a class="btn primary" [href]="lesson['Ссылка на группу']" target="_blank">Записаться</a>
+            </span>
+          </div>
+
+      </div>
+
+    </ng-container>
+        
+
+
+  </div>
+  <img src="/assets/img/main/bckg-rocket.png" class="bckg">
+
+
+
+
+
+
+  <!-- "День недели": "Суббота",
+  "Метро": "Парк Культуры",
+  "Ссылка на группу": "https://coddy.t8s.ru/Learner/Group/16508" -->

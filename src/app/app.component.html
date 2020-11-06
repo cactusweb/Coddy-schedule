@@ -1,121 +1,20 @@
-<table>
-  <thead>
-    <tr>
-      <th>
-        Формат 
-      </th>
-      <th>
-        Метро
-      </th>
-      <th>
-          Направление
-      </th>
-      <th>Курс</th>
-      <th>Возраст</th>
-      <th>
-          Начало занятий
-      </th>
-      <th>
-          Время
-      </th>
-      <th>Преподаватель</th>
-    </tr>
+<app-header></app-header>
 
-    <tr class="pipes">
-      <td>
-        <span>Формат
-          <ul>
-            <li><input type="checkbox" id="online" [(ngModel)]="filtering.online"><label for="online">Online</label></li>
-            <li><input type="checkbox" id="offline" [(ngModel)]="filtering.offline"><label for="offline">Offline</label></li>
-          </ul>
-        </span>
-      </td>
-      <td>
-        <span>Метро
-          <ul>
-            <li>Пока ничего нет</li>
-          </ul>
-        </span>
-      </td>
-      <td>
-        <span class="direction">
-          Направление
-          <ul>
-            <li class="newUl">Программирование:
-              <ul>
-                <li><input type="checkbox" id="games" [(ngModel)]="filtering.heading.games" (ngModelChange)="onChangeHeading()"><label for="games">Игры</label></li>
-                <li><input type="checkbox" [(ngModel)]="filtering.heading.sites" (ngModelChange)="onChangeHeading()" id="sites"><label for="sites">Сайты</label></li>
-                <li><input type="checkbox" [(ngModel)]="filtering.heading.applications" (ngModelChange)="onChangeHeading()" id="applications"><label for="applications">Приложения</label></li>
-                <li><input type="checkbox" [(ngModel)]="filtering.heading.hard" (ngModelChange)="onChangeHeading()" id="hard"><label for="hard">Курсы повышенной сложности</label></li>
-                <li><input type="checkbox" [(ngModel)]="filtering.heading.python" (ngModelChange)="onChangeHeading()" id="python"><label for="python">Python</label></li>
-                <li><input type="checkbox" [(ngModel)]="filtering.heading.minecraft" (ngModelChange)="onChangeHeading()" id="minecraft"><label for="minecraft">Minecraft</label></li>
-              </ul>
-            </li>
-            <li><input type="checkbox" [(ngModel)]="filtering.heading.softSkills" (ngModelChange)="onChangeHeading()" id="softSkills"><label for="softSkills">Soft skills</label></li>
-            <li><input type="checkbox" [(ngModel)]="filtering.heading.cybercream" (ngModelChange)="onChangeHeading()" id="cybercream"><label for="cybercream">Кибербезопасность</label></li>
-            <li><input type="checkbox" [(ngModel)]="filtering.heading.design" (ngModelChange)="onChangeHeading()" id="design"><label for="design">Дизайн и творчество</label></li>
-            <li><input type="checkbox" [(ngModel)]="filtering.heading.age18" (ngModelChange)="onChangeHeading()" id="age18"><label for="age18">18+</label></li>
-            <li><input type="checkbox" [(ngModel)]="filtering.heading.age45" (ngModelChange)="onChangeHeading()" id="age45"><label for="age45">45+</label></li>
-          </ul>
-        </span>
-      </td>
-      <td>
-        <input type="text" placeholder="Курс" [(ngModel)]="filtering.name">
-      </td>
-      <td><input class="age" type="text" mask='00' [(ngModel)]="filtering.age"></td>
-      <td> <input class="date" type="text" [dropSpecialCharacters]="false" mask="00.00" [showMaskTyped]="true" [(ngModel)]="filtering.date"></td>
-      <td>
-        <span>
-          Время
-          <ul class="time" *ngIf="times[0]">
-            <li *ngFor="let time of times"><input type="checkbox" [name]="time" [id]="time" (ngModel)='timeModel' (ngModelChange)="onChangeTime(time)"><label [for]="time">{{time}}</label></li>
-            
-          </ul>
-        </span>
-      </td>
-      <td><input type="text" placeholder="Преподаватель" [(ngModel)]="filtering.teacher"></td>
-    </tr>
+<main>
+
+  <app-table></app-table>
+  <app-foot></app-foot>
+   
+  <img src="/assets/img/footer/yellow-planet.png" alt="">
+</main>
+<!-- <app-navbar></app-navbar> -->
 
 
-  </thead>
-  <tbody *ngIf="lessons[0]">
-    <tr *ngFor="let lesson of lessons 
-      | type : filtering.online : filtering.offline 
-      | teacher : filtering.teacher 
-      | direction : filtering.heading : filtering.heading.change
-      | name : filtering.name
-      | date : filtering.date
-      | age : filtering.age
-      | time : filtering.time : filtering.changeTime,
-    let index = index" [ngClass]="{'tr1': index%2==0}">
-      <td class="type">{{lesson.type}}</td>
-      <td class="address">{{lesson.address}}</td>
-      <td class="direction"> {{lesson.heading}}</td>
-      <td class="name"><a [href]="lesson.link">{{lesson.name}}</a></td>
-      <td class="age"> {{lesson.age}}</td>
-      <td class="season">{{lesson.season}}</td>
-      <td class="time">{{lesson.time}}</td>
-      <td class="teacher"> {{lesson.teacher}} </td>
-    </tr>
-  </tbody>
-  <!-- "name": "Основы программирования для самых маленьких",
-        "level": "Новенькие",
-        "age": "4-6",
-        "season": "26.09-17.10",
-        "teacher": "Юрий Чечель",
-        "time": "11.30-13.30",
-        "address": "ЭВОТОР (м. Парк Культуры, ул.Тимура Фрунзе, 24)",
-        "day": "Суббота",
-        "heading": "Дизайн и творчество",
-        "link": "https://coddyschool.com/courses/photoshop-readymag/",
-        "type": "offline" -->
-</table>
-
-<ngx-spinner
+<!-- <ngx-spinner
             type="ball-clip-rotate"
             bdColor=""
             size="large"
             color="#000000"
             [fullScreen]="false"
 >
-</ngx-spinner>
+</ngx-spinner> -->

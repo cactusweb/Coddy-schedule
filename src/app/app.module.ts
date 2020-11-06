@@ -6,7 +6,6 @@ import { NgxMaskModule } from "ngx-mask";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { PipesComponent } from './pipes/pipes.component';
 import { TypePipe } from './shared/pipes/type/type.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeacherPipe } from './shared/pipes/teacher/teacher.pipe';
@@ -15,18 +14,31 @@ import { NamePipe } from './shared/pipes/name/name.pipe';
 import { DatePipe } from './shared/pipes/date/date.pipe';
 import { AgePipe } from './shared/pipes/age/age.pipe';
 import { TimePipe } from './shared/pipes/time/time.pipe';
+import { MetroPipe } from './shared/pipes/metro/metro.pipe';
+import { TableComponent } from './table/table.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HeaderComponent } from './header/header.component';
+import { FootComponent } from './foot/foot.component';
+import { CalendarPipe } from './shared/pipes/calendar/calendar.pipe';
+import { SortDatePipe } from './shared/pipes/sortDate/sort-date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PipesComponent,
     TypePipe,
     TeacherPipe,
     DirectionPipe,
     NamePipe,
     DatePipe,
     AgePipe,
-    TimePipe
+    TimePipe,
+    MetroPipe,
+    TableComponent,
+    NavbarComponent,
+    HeaderComponent,
+    FootComponent,
+    CalendarPipe,
+    SortDatePipe
   ],
   imports: [
     BrowserModule,

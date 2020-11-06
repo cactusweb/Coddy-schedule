@@ -1,97 +1,32 @@
-table{
-    min-width: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    border-collapse: collapse;
-}
+app-header{justify-self: stretch;}
 
-th:last-child, td:last-child{
-    padding-right: 10px;
-}
-th:first-child, td:first-child{
-    padding-left: 10px;
-}
-td{
-    height: 30px;
-    padding: 10px 10px;
-}
-th{padding: 10px 10px;}
-td,th{max-width: 400px;}
-td:nth-child(2), th:nth-child(2){
-    width: 400px;
-}
-.tr1{
-    background-color: rgb(199, 199, 199);
-}
-
-ul{
-    padding: 15px 25px;
-    margin: 0;
-    list-style: none;
-    background-color: white;
-}
-
-ul li{
+main{
+    /* height: 1000px; */
+    padding: 35px 0px 0px;
     display: grid;
-    grid-template-columns: auto 1fr;
-    justify-items: start;
-    align-items: center;
-    column-gap: 5px;
+    row-gap: 90px;
+
+    /* background-image: url('/assets/img/main/bckg-rocket.png'); */
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    position: relative;
+
+    justify-items: center;
 }
 
-.pipes td{
-    position: relative;
-}
-.pipes td span{
-    position: relative;
-    cursor: pointer;
-}
-.pipes td span>ul{
-    display: none;
+main img{
     position: absolute;
-    left: 0px;
+    bottom: 500px;
+    right: 100px;
 }
 
-.pipes td span:hover>ul{
+app-table{
     display: grid;
+    row-gap: 40px;
+    position: relative;
 }
-
-.newUl{
-    grid-template-columns: auto !important;
+app-foot{
+    width: 100%;
+    position: relative;
 }
-ul.time{
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
-    grid-template-rows: repeat(3, 1fr);
-}
-
-span.direction>ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
-    column-gap: 10px;
-    align-items: center;
-    justify-items: start;
-}
-
-span.direction>ul li.newUl{
-    grid-row: 1/6;
-}
-
-td input{
-    max-width: 80%;
-}
-input.date, input.age{
-    width: 34px;
-    text-align: center;
-}
-
-td:first-child{width: 48px;}
-td:nth-child(2){width: 400px;}
-td:nth-child(3){width: 198px;}
-td:nth-child(4){width: 300px;}
-td:nth-child(5){width: 20px;}
-td:nth-child(6){width: 48px;}
-td:nth-child(7){width: 100px;}
-td:nth-child(8){width: 220px;}

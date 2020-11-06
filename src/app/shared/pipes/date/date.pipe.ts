@@ -13,7 +13,7 @@ export class DatePipe implements PipeTransform {
     if ( date != null && date !== '' && date != undefined){
       let filter = arr.filter(
         ell =>
-          ell.season.toLowerCase().indexOf(date.toLowerCase()) === 0
+          ell["Период"].toLowerCase().indexOf(date.toLowerCase()) === 0
       );
       return filter;
     }

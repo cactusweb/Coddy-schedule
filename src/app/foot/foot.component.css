@@ -1,0 +1,49 @@
+section{
+    background-image: url('/assets/img/footer/bckg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+
+    position: relative;
+
+    height: 600px;
+
+    overflow-x: hidden;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+ img{
+    left: 78%;
+    bottom: 55%;
+    position: absolute;
+}
+
+.info{
+    width: 1164px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    row-gap: 65px;
+    justify-items: start;
+    position: relative;
+    bottom: -50px;
+}
+p{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.btn{
+    padding: 19px 79px 15px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+
+
+/* img{
+    transform: translate(0px, 0px);
+} */

@@ -5,19 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TypePipe implements PipeTransform {
 
-  transform(arr: any = [], online: boolean, offline: boolean): unknown {
-    let onn = '1';
-    let off = '1';
-
-    if (online)
-      onn = "online";
-    if (offline)
-      off = "offline";
-      
+  transform(arr: any = [], type: string): unknown {
     
-    if ( online || offline ){
+    if ( type != '0' ){
       let filter = arr.filter(
-        ell =>  ell.type.indexOf(onn) === 0 || ell.type.indexOf(off) === 0
+        ell =>  ell["Формат"].toLowerCase().indexOf(type) === 0
       );
       return filter;
     }
