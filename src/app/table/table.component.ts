@@ -14,6 +14,7 @@ export class TableComponent implements OnInit {
   activeDate = 0;
   timeModel;
   metroModel;
+  month = (new Date().getMonth() + 1);
   filtering = {
     format: '0',
     formatName: 'Формат',

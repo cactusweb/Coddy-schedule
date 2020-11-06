@@ -61,8 +61,8 @@ h1{
     margin: 0;
     position: relative;
     top: 0px;
-    -webkit-transition: .2s ;
-    transition: .2s ;
+    -webkit-transition: .3s ;
+    transition: .3s ;
     color: #fff;
     font-weight: 700;
 
@@ -132,6 +132,8 @@ span.select-btn:hover .options{
     left: 0px;
     top: 100%;
     width: 100%;
+
+    z-index: 2;
 
     padding-top: 5px;
     

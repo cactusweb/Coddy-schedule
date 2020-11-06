@@ -211,7 +211,7 @@
 .row-2{grid-row: 4/5;}
 .row-3{grid-row: 5/6;}
 .row-4{grid-row: 6/7;}
-.row-5{grid-row: 8/9;}
+.row-5{grid-row: 7/8;}
 
 img.bckg{position: absolute; bottom: -120px; width: 50%; z-index: -1; left: 50%; transform: translate(-50%, 0%); pointer-events: none;}
 img.planet{
