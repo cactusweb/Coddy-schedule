@@ -14,9 +14,6 @@ export class CalendarPipe implements PipeTransform {
     date = new Date(date.getFullYear(), month - 1);
     countDaysOfMonth = this.getAllMonthDays(date);
 
-    console.log(date, countDaysOfMonth)
-    console.log(this.getDay(date))
-
     for (let i = 0; i < this.getDay(date); i++) {
       countStartNullDay++;
       returnArr.push([{day: -1, month: month}]);

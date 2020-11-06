@@ -22,7 +22,7 @@ section{
 }
 
 .info{
-    width: 1164px;
+    width: 1146px;
     display: grid;
     grid-template-rows: 1fr auto;
     row-gap: 65px;

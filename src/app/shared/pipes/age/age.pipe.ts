@@ -42,7 +42,6 @@ export class AgePipe implements PipeTransform {
           ellRange = this.getGapAge(ell['Возраст']);
           for (let i = filtRange.start; i <= filtRange.end; i++){
             if (i > ellRange.start && i < ellRange.end){
-              console.log('here')
               isValid = true;
               break;
             }

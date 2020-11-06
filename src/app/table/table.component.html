@@ -107,7 +107,7 @@
           <div class="before"><span></span></div>
 
           <ul>
-            <li> <input type="radio" name="direction" id="direction" value="0" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Направление')"> <label for="direction">Направление</label> </li>
+            <li> <input type="radio" name="direction" id="direction" value="0" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Все курсы')"> <label for="direction">Все курсы</label> </li>
             <li> <input type="radio" name="direction" id="games" value="games" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Игры')"> <label for="games">Игры</label> </li>
             <li> <input type="radio" name="direction" id="sites" value="sites" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Сайты')"> <label for="sites">Сайты</label> </li>
             <li> <input type="radio" name="direction" id="app" value="app" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Приложения')"> <label for="app">Приложения</label> </li>
@@ -172,9 +172,32 @@
     </div>
 
     <div>
-      <input type="text" placeholder="Название метро" class="inp" [(ngModel)]='filtering.metro'>
-      <input type="text" placeholder="Название курса" class="inp" [(ngModel)]="filtering.name">
-      <input type="text" placeholder="Преподаватель" class="inp" [(ngModel)]="filtering.teacher">
+      <input type="text" placeholder="Название метро" class="inp" list="metroStations" [(ngModel)]='filtering.metro'>
+      <datalist *ngIf="filtering.metro.length > 2" id="metroStations">
+        <ng-container *ngFor="let station of metroStations">
+
+          <option [value]="station"></option>
+
+        </ng-container>
+      </datalist>
+
+      <input type="text" placeholder="Название курса" class="inp" list="coursName" [(ngModel)]="filtering.name">
+      <datalist *ngIf="filtering.name.length > 2" id="coursName">
+        <ng-container *ngFor="let name of coursesNames">
+
+          <option [value]="name"></option>
+
+        </ng-container>
+      </datalist>
+
+      <input type="text" placeholder="Преподаватель" class="inp" list="teacher" [(ngModel)]="filtering.teacher">
+      <datalist *ngIf="filtering.teacher.length > 2" id="teacher">
+        <ng-container *ngFor="let teacher of teachers">
+
+          <option [value]="teacher"></option>
+
+        </ng-container>
+      </datalist>
     </div>
 
   </div>

@@ -9,6 +9,10 @@ div{box-sizing: border-box;}
 app-root{display: grid;}
 p, h1, h2, h3, ul, li{padding: 0; margin: 0;}
 
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 label, input[type="checkbox"], button, select, a{
     cursor: pointer;
     border: none;
@@ -33,7 +37,7 @@ span.select::after{
     border-color: transparent transparent #fff transparent;
     position: absolute;
     right: -20px;
-    top: 10px;
+    top: 6px;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     -webkit-transition: all .3s;
@@ -109,6 +113,10 @@ span.btn{
     border-color: transparent transparent #0494b4 transparent;
     transition: all .3s;
 }
+.select-btn{
+    font-size: 14px;
+    padding: 13px 29px 8px;
+}
 .btn.select-btn.primary:hover{
     background-color: #0484ac;
     top: 0px;
@@ -176,11 +184,12 @@ span.select-btn:hover .options{
 }
 
 .inp{
-    font-size: 16px;
+    font-size: 12px;
     box-sizing: border-box;
-    padding: 11px 16px;
+    font-weight: bold;
+    padding: 12px 14px;
 
-    border: 4px solid #0484ac;
+    border: 3px solid #0484ac;
 
     border-radius: 20px;
 }

@@ -10,16 +10,17 @@ import { HttpService } from '../shared/http.service';
 export class TableComponent implements OnInit {
   title = 'coddy-parser';
   lessons: any = [];
+  teachers: any = [];
   metroStations: any = [];
+  coursesNames: any = [];
   activeDate = 0;
-  timeModel;
-  metroModel;
+
   month = (new Date().getMonth() + 1);
   filtering = {
     format: '0',
     formatName: 'Формат',
     direction: '0',
-    directionName: 'Направление',
+    directionName: 'Все курсы',
     time: '0',
     timeName: "Время занятий",
     age: '0',
@@ -45,9 +46,10 @@ export class TableComponent implements OnInit {
     await this.http.getLessons()
     .then( items => {
       this.lessons = this.setValidTime(items);
+      this.metroStations = this.getAllDifferentValue(this.lessons, 'Метро');
+      this.coursesNames = this.getAllDifferentValue(this.lessons, 'Название');
+      this.teachers = this.getAllDifferentValue(this.lessons, 'Преподаватель');
       // this.getAllTimes(this.lessons);
-      let date = new Date();
-      // this.lessons = this.calendarPipe.transform(this.lessons, 11);
       this.spinner.hide();
     })
     .catch(e =>{
@@ -79,22 +81,22 @@ export class TableComponent implements OnInit {
 
 
 
-  getAllMetro(arr){
+  getAllDifferentValue(arr, name){
     let returnArr: any = [];
     if (arr[0]){
       
       for (let i = 0; i < arr.length; i++){
         let alreadySet = false;
-        if ( i == 0 && arr[i]["Метро"]){
-          returnArr.push(arr[i]["Метро"]);
+        if ( i == 0 && arr[i][name]){
+          returnArr.push(arr[i][name]);
         }
-        else if (arr[i]["Метро"]){
+        else if (arr[i][name]){
           for (let k = 0; k < returnArr.length; k++){
-              if (returnArr[k] == arr[i]["Метро"])
+              if (returnArr[k] == arr[i][name])
                 alreadySet = true;
           }
           if (!alreadySet)
-            returnArr.push(arr[i]["Метро"])
+            returnArr.push(arr[i][name])
         }
 
       }

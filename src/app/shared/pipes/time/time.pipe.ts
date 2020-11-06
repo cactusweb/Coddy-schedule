@@ -11,7 +11,6 @@ export class TimePipe implements PipeTransform {
       let filtRange = this.getGapTime(time);
       let filter = arr.filter( ell => {
 
-        console.log(this.getGapTime(ell["Время"]))
         return filtRange.start <= this.getGapTime(ell["Время"]).start && filtRange.end >= this.getGapTime(ell["Время"]).start
 
       }

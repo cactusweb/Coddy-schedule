@@ -18,9 +18,14 @@
 
 .pipes >div:first-child .start{
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     column-gap: 9px;
     align-items: center;
+    justify-items: end;
+}
+.pipes >div:first-child .start label{
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .pipes>div:last-child{
@@ -30,6 +35,7 @@
     column-gap: 9px;
 }
 .pipes .start .inp{width: 145px;}
+.pipes .btn{margin-bottom: 5px;}
 
 .monthes{
     display: grid;
@@ -39,7 +45,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     justify-items: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -67,10 +73,10 @@
 .calendar{
     display: grid;
     justify-self: center;
-    column-gap: 5px;
+    column-gap: 2px;
+    row-gap: 2px;
     grid-template-columns: repeat(7, 162px);
 
-    row-gap: 5px;
 }
 
 .week-day{
@@ -138,7 +144,7 @@
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     text-overflow: ellipsis;
 
-    font-size: 10px;
+    font-size: 12px;
     line-height: 12px;
 }
 
