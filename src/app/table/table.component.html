@@ -218,6 +218,13 @@
 
   <div class="calendar">
 
+    <div class="week-day">Понедельник</div>
+    <div class="week-day">Вторник</div>
+    <div class="week-day">Среда</div>
+    <div class="week-day">Четверг</div>
+    <div class="week-day">Пятница</div>
+    <div class="week-day">Суббота</div>
+    <div class="week-day">Воскресенье</div>
 
     <ng-container *ngFor="let day of lessons
       | type : filtering.format 
@@ -249,7 +256,7 @@
 
         <div class="info">
 
-          <span class="time">{{ day[0]['Время'] }} {{ index }} </span>
+          <span class="time">{{ day[0]['Время'] }} </span>
 
           <span class="name">{{ day[0]['Название'] }}</span>
 
