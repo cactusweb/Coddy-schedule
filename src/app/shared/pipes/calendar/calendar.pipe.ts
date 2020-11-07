@@ -21,9 +21,9 @@ export class CalendarPipe implements PipeTransform {
 
     arr = arr.map(lesson => ({
       ...lesson,
-      day: this.getDay_Month(lesson['Период']).getDay(),
-      date: Number(lesson['Период'].split('-')[0].split('.')[0]),
-      month: this.getDay_Month(lesson['Период']).getMonth() + 1,
+      day: this.getDay_Month(lesson['Дата старта курса']).getDay(),
+      date: Number(lesson['Дата старта курса'].split('-')[0].split('.')[0]),
+      month: this.getDay_Month(lesson['Дата старта курса']).getMonth() + 1,
     }));
 
     let lastDate = 0;

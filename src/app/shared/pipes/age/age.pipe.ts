@@ -59,18 +59,8 @@ export class AgePipe implements PipeTransform {
   }
 
   getGapAge(range){
-    let start;
-    let end = 200;
-    switch (range){
-      case '18+': start = 18; break;
-      case '45+': start = 45; break;
-      default:
-        let nums = range.split('-');
-        start = Number(nums[0]);
-        end = Number(nums[1]);
-        break;
-    }
-    return {start: start, end: end}
+    let nums = range.split('-');
+    return {start: Number(nums[0]), end: Number(nums[1])}
   }
 
 

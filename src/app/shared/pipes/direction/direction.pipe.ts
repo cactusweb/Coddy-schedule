@@ -26,8 +26,6 @@ export class DirectionPipe implements PipeTransform {
         case 'minecraft': break;
         case 'softSkills': direction = 'soft skills'; break;
         case 'cybercream': direction = 'кибербезопасность'; break;
-        case 'age18': direction = '18+'; break;
-        case 'age45': direction = '45+'; break;
         default: direction = '0';
       }
 

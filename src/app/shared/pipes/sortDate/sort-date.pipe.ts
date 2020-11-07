@@ -26,7 +26,7 @@ export class SortDatePipe implements PipeTransform {
   }
 
   getNumberDate(item){
-    let date = item['Период'];
+    let date = item['Дата старта курса'];
     let start = date.split('-')[0].split('.');
     let day = start[0];
     let month = start[1];
