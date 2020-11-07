@@ -322,14 +322,17 @@
           
           <div class="lesson" *ngFor="let lesson of day">
 
-            <span class="directionImg">
-              <img  *ngIf="lesson['Направление'] == 'Дизайн и творчество'" src="/assets/img/table/games.png">
-              <img  *ngIf="lesson['Направление'] !== 'Дизайн и творчество'" src="/assets/img/table/other.png">
-
-            </span>
-            <span class="date">{{ lesson['Время'] }}</span>
-            <span class="direction">{{ lesson['Направление'] }}</span>
-            <span class="name">{{ lesson['Название'] }}</span>
+            <div class="head">
+              <span class="date">{{ lesson['Время'] }}</span>
+              <span class="direction">{{ lesson['Направление'] }}</span>
+              <span class="name">{{ lesson['Название'] }}</span>
+              
+              <span class="directionImg">
+                <img  *ngIf="lesson['Направление'] == 'Дизайн и творчество'" src="/assets/img/table/games.png">
+                <img  *ngIf="lesson['Направление'] !== 'Дизайн и творчество'" src="/assets/img/table/other.png">
+  
+              </span>
+            </div>
             <span class="age"> <span class="dataName">Возраст:</span> {{ lesson['Возраст'] }}</span>
             <span class="teacher"> <span class="dataName">Преподаватель:</span> {{ lesson['Преподаватель'] }} </span>
             <span class="address"> {{ lesson['Адрес'] }} </span>

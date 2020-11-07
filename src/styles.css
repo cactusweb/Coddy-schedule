@@ -37,7 +37,7 @@ span.select::after{
     border-color: transparent transparent #fff transparent;
     position: absolute;
     right: -20px;
-    top: 6px;
+    top: 10px;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     -webkit-transition: all .3s;
@@ -45,7 +45,7 @@ span.select::after{
 }
 
 h1{
-    font-size: 59px;
+    font-size: 44px;
     font-weight: bold;
 }
 
@@ -114,7 +114,8 @@ span.btn{
     transition: all .3s;
 }
 .select-btn{
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 19px;
     padding: 13px 29px 8px;
 }
 .btn.select-btn.primary:hover{
@@ -131,15 +132,15 @@ span.btn{
 
 
 span.select-btn:hover .options{
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1) translate(-50%, 0%);
+    transform: scale(1, 1) translate(-50%, 0%);
 }
 
 .options{
     position: absolute;
-    left: 0px;
+    left: 50%;
     top: 100%;
-    width: 100%;
+    min-width: 100%;
 
     z-index: 2;
 
@@ -148,8 +149,8 @@ span.select-btn:hover .options{
     transform-origin: top;
     -webkit-transition: all .2s;
     transition: all .2s;
-    -webkit-transform: scale(1, 0);
-    transform: scale(1, 0);
+    -webkit-transform: scale(1, 0) translate(-50%, 0%);
+    transform: scale(1, 0) translate(-50%, 0%);
     cursor: default;
 }
 
@@ -184,10 +185,10 @@ span.select-btn:hover .options{
 }
 
 .inp{
-    font-size: 12px;
+    font-size: 16px;
     box-sizing: border-box;
     font-weight: bold;
-    padding: 12px 14px;
+    padding: 9px 14px;
 
     border: 3px solid #0484ac;
 

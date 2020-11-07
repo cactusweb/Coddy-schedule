@@ -8,6 +8,15 @@
 
 
 .pipes{display: grid; row-gap: 20px; align-items: center;}
+.pipes .first-row span:nth-child(2) .options{
+    width: 300px;
+}
+.pipes .first-row span:nth-child(3) .options{
+    width: 333px;
+}
+.pipes .first-row span:last-child .options{
+    width: 233px;
+}
 
 .pipes>div:first-child{
     display: grid;
@@ -25,7 +34,7 @@
 }
 .pipes >div:first-child .start label{
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .pipes>div:last-child{
@@ -45,7 +54,7 @@
     grid-template-columns: auto 1fr auto;
     align-items: center;
     justify-items: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -80,7 +89,7 @@
 }
 
 .week-day{
-    font-size: 14px;
+    font-size: 16px;
     padding-bottom: 17px;
     text-align: center;
 }
@@ -123,8 +132,8 @@
 .day .date{
     justify-self: end;
     padding: 9px 9px 0px;
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 16px;
+    line-height: 18px;
     font-weight: bold;
 }
 
@@ -133,8 +142,8 @@
     row-gap: 10px;
     justify-items: center;
     max-height: 100%;
-    font-size: 11px;
-    line-height: 13px;
+    font-size: 14px;
+    line-height: 16px;
     align-self: start;
 }
 
@@ -144,11 +153,11 @@
     overflow: hidden; /* Обрезаем все, что не помещается в область */
     text-overflow: ellipsis;
 
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 14px;
+    line-height: 16px;
 }
 
-.day a{text-align: center; font-size: 10px; line-height: 12px;}
+.day a{text-align: center; font-size: 14px; line-height: 14px;}
 .day a span{
     text-decoration: underline;
 }
@@ -178,33 +187,29 @@
     width: 370px;
 
     border-radius: 30px;
-    padding: 14px 18px;
+    padding: 14px 15px;
 
-    box-shadow: 0px 0px 10px rgba(151, 151, 151, .28);
+    box-shadow: 0px 0px 10px rgba(179, 94, 94, 0.28);
 
-    grid-template-rows: repeat(6, auto) 1fr;
+    grid-template-rows: 1fr auto auto auto;
     display: grid;
-    row-gap: 15px;
+    row-gap: 5px;
     
     align-items: center;
-    font-size: 11px;
-    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
     position: relative;
 }
-.lesson .direction{
+.lesson .head{display: grid; align-self: start; grid-template-columns: 1fr 54px; grid-template-rows: auto auto 1fr; row-gap: 5px; column-gap: 1px;}
+
+.lesson .head .direction{
     color: #00ba9f;
 }
-.lesson .name{font-size: 13px;}
-.lesson .dataName{color: #00ba9f;}
-.lesson .btns{display: grid; align-items: center; align-self: end; grid-template-columns: 1fr auto; padding-bottom: 5px;}
-.lesson .btns a:first-child{font-weight: normal; color: #00ba9f; justify-self: start;}
+.lesson .head .name{font-size: 18px; align-self: start; line-height: 18px; max-height: 70px; overflow: hidden; }
 
-.lesson .btns .btn{font-size: 14px; line-height: 12px; padding: 14px 12px;}
-.lesson .directionImg{
-    position: absolute;
-    top: 20px;
-    right: 15px;
-
+.lesson .head .directionImg{
+    grid-row: 1/4;
+    grid-column: 2/3;
     padding: 9px;
     height: 54px;
     width: 54px;
@@ -212,6 +217,11 @@
     background-color: #00ba9f;
     box-sizing: border-box;
 }
+.lesson .dataName{color: #00ba9f;}
+.lesson .btns{display: grid; align-items: center; align-self: end; grid-template-columns: 1fr auto; padding-bottom: 5px;}
+.lesson .btns a:first-child{font-weight: normal; color: #00ba9f; justify-self: start;}
+
+.lesson .btns .btn{font-size: 18px; line-height: 12px; padding: 14px 12px;}
 
 .row-1{grid-row: 3/4;}
 .row-2{grid-row: 4/5;}

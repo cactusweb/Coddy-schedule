@@ -8,7 +8,6 @@ import { HttpService } from '../shared/http.service';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  title = 'coddy-parser';
   lessons: any = [];
   teachers: any = [];
   metroStations: any = [];
@@ -74,7 +73,6 @@ export class TableComponent implements OnInit {
   }
 
   onActiveDate(date){
-
     this.activeDate = this.activeDate == date ? 0 : date;
   }
 
@@ -92,11 +90,13 @@ export class TableComponent implements OnInit {
         }
         else if (arr[i][name]){
           for (let k = 0; k < returnArr.length; k++){
-              if (returnArr[k] == arr[i][name])
+              if (returnArr[k] == arr[i][name]){
                 alreadySet = true;
+                break;
+              }
           }
           if (!alreadySet)
-            returnArr.push(arr[i][name])
+            returnArr.push(arr[i][name]);
         }
 
       }

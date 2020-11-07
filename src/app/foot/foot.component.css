@@ -28,18 +28,18 @@ section{
     row-gap: 65px;
     justify-items: start;
     position: relative;
-    bottom: -50px;
+    bottom: -70px;
 }
 p{
     color: white;
-    font-size: 25px;
+    font-size: 34px;
     font-weight: bold;
 }
 
 .btn{
     padding: 19px 79px 15px;
     line-height: 20px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 
