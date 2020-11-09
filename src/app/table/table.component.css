@@ -14,9 +14,6 @@
 .pipes .first-row span:nth-child(3) .options{
     width: 333px;
 }
-.pipes .first-row span:last-child .options{
-    width: 233px;
-}
 
 .pipes>div:first-child{
     display: grid;
@@ -43,7 +40,7 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 9px;
 }
-.pipes .start .inp{width: 145px;}
+.pipes .start .inp{width: 95px;}
 .pipes .btn{margin-bottom: 5px;}
 
 .monthes{

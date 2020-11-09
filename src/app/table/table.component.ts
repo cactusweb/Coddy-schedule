@@ -21,7 +21,7 @@ export class TableComponent implements OnInit {
     direction: '0',
     directionName: 'Все курсы',
     time: '0',
-    timeName: "Время занятий",
+    timeName: "Время",
     age: '0',
     ageName: 'Любой возраст',
     teacher: '',

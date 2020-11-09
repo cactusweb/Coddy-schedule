@@ -111,7 +111,7 @@
             <li> <input type="radio" name="direction" id="games" value="games" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Игры')"> <label for="games">Игры</label> </li>
             <li> <input type="radio" name="direction" id="sites" value="sites" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Сайты')"> <label for="sites">Сайты</label> </li>
             <li> <input type="radio" name="direction" id="app" value="app" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Приложения')"> <label for="app">Приложения</label> </li>
-            <li> <input type="radio" name="direction" id="hard" value="hard" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Курсы повышенной сложности')"> <label for="hard">Курсы повышенной сложности</label> </li>
+            <li> <input type="radio" name="direction" id="hard" value="hard" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Повышенная сложность')"> <label for="hard">Повышенная сложность</label> </li>
             <li> <input type="radio" name="direction" id="python" value="python" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Python')"> <label for="python">Python</label> </li>
             <li> <input type="radio" name="direction" id="minecraft" value="minecraft" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Minecraft')"> <label for="minecraft">Minecraft</label> </li>
             <li> <input type="radio" name="direction" id="softSkills" value="softSkills" [(ngModel)]="filtering.direction" (ngModelChange)="onChangeDirection('Soft skills')"> <label for="softSkills">Soft skills</label> </li>
@@ -150,7 +150,7 @@
           <div class="before"><span></span></div>
           <ul>
              <li>
-               <input type="radio" value="0" id="time" name="time"  [(ngModel)]="filtering.time" (ngModelChange)="onChangeTime('Время занятий')"><label for="time">Время занятий</label>
+               <input type="radio" value="0" id="time" name="time"  [(ngModel)]="filtering.time" (ngModelChange)="onChangeTime('Время')"><label for="time">Время</label>
              </li>
              <li>
                <input type="radio" value="9:00-12:00" id="morning" name="time" [(ngModel)]="filtering.time" (ngModelChange)="onChangeTime('Утро')"><label for="morning">Утро</label>
