@@ -8,12 +8,8 @@
 
 
 .pipes{display: grid; row-gap: 20px; align-items: center;}
-.pipes .first-row span:nth-child(2) .options{
-    width: 300px;
-}
-.pipes .first-row span:nth-child(3) .options{
-    width: 333px;
-}
+.pipes .first-row span:nth-child(2){width: 315px;}
+.pipes .first-row span:nth-child(3) {width: 225px;}
 
 .pipes>div:first-child{
     display: grid;
