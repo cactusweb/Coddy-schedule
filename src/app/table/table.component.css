@@ -263,7 +263,6 @@ img.planet{
     .lesson{
         min-height: 290px;
         width: 340px;
-        justify-self: center;
         box-sizing: border-box;
     }
     
