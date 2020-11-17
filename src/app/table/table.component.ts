@@ -76,6 +76,17 @@ export class TableComponent implements OnInit {
     this.activeDate = this.activeDate == date ? 0 : date;
   }
 
+  onClickSelect(id, type: string = 'click'){
+    let element = document.querySelector(`#${id}`)
+    if (window.innerWidth < 1030 && type == 'enter'){
+      return
+    }else if (!element.classList.contains('active') && type !== 'leave'){
+      element.classList.add('active');
+    }
+    else 
+      element.classList.remove('active');
+  }
+
 
 
 

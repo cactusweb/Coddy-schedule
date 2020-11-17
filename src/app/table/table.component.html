@@ -86,7 +86,7 @@
 
     <div class="first-row">
 
-      <span name="format" class="btn primary select-btn">
+      <span name="format" class="btn primary select-btn" id="format-select" (mouseenter)="onClickSelect('format-select','enter')" (mouseleave)="onClickSelect('format-select', 'leave')" (click)="onClickSelect('format-select')">
         <span class="select">{{filtering.formatName}}</span>
         <div class="options">
           <div class="before"><span></span></div>
@@ -99,7 +99,7 @@
         </div>
       </span>
   
-      <span class="btn primary select-btn">
+      <span class="btn primary select-btn" id="direction-select" (mouseenter)="onClickSelect('direction-select', 'enter')" (mouseleave)="onClickSelect('direction-select', 'leave')" (click)="onClickSelect('direction-select')">
         <span class="select">{{filtering.directionName}}</span>
         <span class="after"></span>
 
@@ -122,7 +122,7 @@
         </div>
       </span>
   
-      <span class="btn primary select-btn">
+      <span class="btn primary select-btn" id="age-select" (mouseenter)="onClickSelect('age-select', 'enter')" (mouseleave)="onClickSelect('age-select', 'leave')" (click)="onClickSelect('age-select')">
         <span class="select">
           {{ filtering.ageName }}
         </span>
@@ -142,7 +142,7 @@
         <input type="text" class="inp" name="start" id="start" placeholder="ДД.ММ" [dropSpecialCharacters]="false" mask="00.00" [(ngModel)]="filtering.date">
       </div>
   
-      <span class="btn primary select-btn">
+      <span class="btn primary select-btn" id="time-select" (mouseenter)="onClickSelect('time-select', 'enter')" (mouseleave)="onClickSelect('time-select', 'leave')" (click)="onClickSelect('time-select')">
          <span class="select">
             {{ filtering.timeName }}
          </span>
@@ -263,7 +263,7 @@
       | time : filtering.time 
       | metro : filtering.metro
       | date : filtering.date
-      | calendar : 11
+      | calendar : month
         let index = index"
     >
 

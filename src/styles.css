@@ -124,19 +124,24 @@ span.btn{
     padding: 13px 29px 8px;
 }
 .btn.select-btn.primary:hover{
+    top: 0px;
+    -webkit-box-shadow: 0 5px 0 #0484ac ;
+    box-shadow: 0 5px 0 #0484ac ;
+}
+.btn.select-btn.primary.active{
     background-color: #0484ac;
     top: 0px;
     -webkit-box-shadow: 0 5px 0 #0484ac ;
     box-shadow: 0 5px 0 #0484ac ;
 }
 
-.btn.select-btn.primary:hover span.select::after{
+.btn.select-btn.primary.active span.select::after{
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
 }
 
 
-span.select-btn:hover .options{
+span.select-btn.active .options{
     -webkit-transform: scale(1, 1) translate(-50%, 0%);
     transform: scale(1, 1) translate(-50%, 0%);
 }
