@@ -25,7 +25,8 @@ label, input[type="checkbox"], button, select, a{
 
 .select{
     position: relative;
-    white-space: nowrap;
+    display: inline-block;
+    width: fit-content;
 }
 
 span.select::after{
@@ -33,11 +34,12 @@ span.select::after{
     width: 0;
     height: 0;
     border-style: solid;
+    box-sizing: border-box;
     border-width: 0 6.5px 8px 6.5px;
     border-color: transparent transparent #fff transparent;
     position: absolute;
     right: -20px;
-    top: 10px;
+    top: 6px;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     -webkit-transition: all .3s;
