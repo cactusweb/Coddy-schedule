@@ -48,6 +48,11 @@ h1{
     font-size: 44px;
     font-weight: bold;
 }
+@media (max-width: 749px){
+    h1{
+        font-size: 26px;
+    }
+}
 
 .ellements{position: absolute; width: 100%;}
 .ellements img{ position: absolute; }
@@ -155,6 +160,7 @@ span.select-btn:hover .options{
 }
 
 .options ul{
+    list-style: none;
     padding: 5px;
     background-color: #0493b4;
     border-radius: 20px;
@@ -177,6 +183,13 @@ span.select-btn:hover .options{
     text-align: left;
     padding: 10px 10%;
 }
+
+@media(max-width: 739px){
+    
+    .options li label{
+        text-align: center;
+    }
+    }
 .options input[type="radio"]{
     height: 0px;
     width: 0px;

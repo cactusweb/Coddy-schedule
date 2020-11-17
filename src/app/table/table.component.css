@@ -7,13 +7,14 @@
 
 
 
-.pipes{display: grid; row-gap: 20px; align-items: center;}
-.pipes .first-row span:nth-child(2){width: 315px;}
-.pipes .first-row span:nth-child(3) {width: 225px;}
+.pipes{display: grid; row-gap: 15px; align-items: center;}
+.pipes .first-row span:nth-child(2){min-width: 315px;}
+.pipes .first-row span:nth-child(3) {min-width: 225px;}
 
 .pipes>div:first-child{
     display: grid;
     grid-template-columns: repeat(5, auto);
+    row-gap: 15px;
     column-gap: 7px;
     align-items: center;
 }
@@ -77,7 +78,7 @@
     justify-self: center;
     column-gap: 2px;
     row-gap: 2px;
-    grid-template-columns: repeat(7, 162px);
+    grid-template-columns: repeat(7, auto);
 
 }
 
@@ -104,6 +105,7 @@
     align-items: center;
 }
 .day.active{height: 110%;}
+
 
 .day.emptyDay{
     border: none !important;
@@ -153,7 +155,7 @@
     text-align: center;
 }
 
-.day a{text-align: center; font-size: 14px; line-height: 14px;}
+.day a{text-align: center; font-size: 14px; line-height: 14px; align-self: end;}
 .day a span{
     text-decoration: underline;
 }
@@ -186,7 +188,7 @@
     padding: 14px 15px;
 
     box-shadow: 0px 0px 10px rgba(179, 94, 94, 0.28);
-
+    background-color: #ffffff;
     grid-template-rows: 1fr auto auto auto;
     display: grid;
     row-gap: 5px;
@@ -230,4 +232,122 @@ img.planet{
     position: absolute;
     bottom: -100px;
     right: 100px;
+}
+
+
+@media (max-width: 1200px) {
+    .pipes > div:first-child{
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .pipes > div:first-child> :last-child{
+        grid-column: 3/4;
+    }
+    .pipes > div:first-child> :nth-child(4){
+        grid-column: 2/3;
+    }
+
+    .day{
+        min-height: 112px;
+        width: 100px;
+        grid-template-rows: auto 1fr;
+    }
+    .day-lessons{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .day .phone{display: none;}
+    .week-day{font-size: 15px;}
+    .week-day.short{display: none;}
+    
+    .lesson{
+        min-height: 290px;
+        width: 340px;
+        justify-self: center;
+        box-sizing: border-box;
+    }
+    
+
+    .day .info{display: none;}
+}
+
+@media (max-width: 739px){
+    .pipes{row-gap: 10px;}
+    .pipes>div{row-gap: 10px;}
+    .pipes > div:first-child{
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .pipes > div:first-child> :first-child{
+        grid-column: 1/3;
+    }
+    .pipes > div:first-child> :nth-child(2){
+        grid-column: 1/3;
+    }
+    .pipes > div:first-child> :nth-child(3){
+        grid-column: 1/3;
+    }
+    .pipes > div:first-child> .start label{
+        font-size: 14px;
+    }
+    
+    .pipes .first-row span:nth-child(2){min-width: auto;}
+    .pipes .first-row span:nth-child(3) {min-width: auto;}
+
+
+    .monthes{min-width: auto; padding: 0px 15px; width: 100%; row-gap: 5px;}
+    .calendar{
+        padding: 5px;
+        grid-template-columns: repeat(7, 1fr);
+        justify-self: stretch;
+        column-gap: 1px;
+    }
+
+    .day{width: auto; max-width: 80px; max-height: 90px; min-height: auto; grid-template-rows: auto 1fr; align-items: center;}
+    .day .date{justify-self: center; padding: 9px 0px 0px;}
+    .day .info{display: none;}
+    .day a{font-size: 11px;}
+    
+    .pipes > div .start{
+        justify-self: center;
+    }
+    .pipes > div:last-child{
+        grid-template-columns: auto;
+    }
+    .pipes > div:first-child > :nth-child(4){grid-column: auto;}
+    .pipes > div:first-child > :last-child{grid-column: auto;}
+
+    .week-day.full{display: none;}
+    .week-day.short{display: block;}
+
+    img.bckg{bottom: -30px;}
+    .day .phone{display: none;}
+
+    .day-lessons{grid-template-columns: repeat(2, 1fr); row-gap: 5px; column-gap: 5px;}
+    .lesson{font-size: 11px; width: auto; height: auto; min-height: auto; padding: 10px;}
+    .lesson .head .directionImg{display: none;}
+    .lesson .head{grid-template-rows: auto; grid-template-columns: auto;}
+    .lesson .head .name{ font-size: 14px; line-height: 14px;}
+    .lesson .btns{row-gap: 5px; grid-template-columns: auto; justify-items: center;}
+    .lesson .btns a:first-child{justify-self: center;}
+    .lesson .btns .btn {
+        font-size: 14px;
+        line-height: 12px;
+        padding: 8px 12px;
+        grid-row: 1/2;
+    }
+}
+
+@media (max-width: 330px){
+    .pipes > div:first-child> .start{grid-template-columns: auto;}
+    .pipes > div:first-child> .start label{
+        display: none;
+    }
+    .pipes > div:first-child> .start input{
+        justify-self: center;
+    }
+    .day a{font-size: 9px;}
+    .day .phone{display: block;}
+    .day .pc{display: none;}
+
 }

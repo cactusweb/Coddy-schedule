@@ -237,13 +237,21 @@
 
   <div class="calendar">
 
-    <div class="week-day">Понедельник</div>
-    <div class="week-day">Вторник</div>
-    <div class="week-day">Среда</div>
-    <div class="week-day">Четверг</div>
-    <div class="week-day">Пятница</div>
-    <div class="week-day">Суббота</div>
-    <div class="week-day">Воскресенье</div>
+    <div class="week-day full">Понедельник</div>
+    <div class="week-day full">Вторник</div>
+    <div class="week-day full">Среда</div>
+    <div class="week-day full">Четверг</div>
+    <div class="week-day full">Пятница</div>
+    <div class="week-day full">Суббота</div>
+    <div class="week-day full">Воскресенье</div>
+
+    <div class="week-day short">Пн</div>
+    <div class="week-day short">Вт</div>
+    <div class="week-day short">Ср</div>
+    <div class="week-day short">Чт</div>
+    <div class="week-day short">Пт</div>
+    <div class="week-day short">Сб</div>
+    <div class="week-day short">Вс</div>
 
     <ng-container *ngFor="let day of lessons
       | type : filtering.format 
@@ -281,7 +289,7 @@
 
         </div>
 
-        <a *ngIf="day[0]['Название'] && day[0].date != activeDate" (click)="onActiveDate(day[0].date)"> <span>Еще {{ day.length }}</span>  
+        <a *ngIf="day[0]['Название'] && day[0].date != activeDate" (click)="onActiveDate(day[0].date)"> <span>{{ day.length }}</span>  
           <span *ngIf="
             ( day.length % 10 == 2 || day.length % 10 == 3 || day.length % 10 == 4 ) && ( 10 > day.length || day.length > 20 ) 
           ">
@@ -300,7 +308,8 @@
 
           >></a>
         <a *ngIf="day[0]['Название'] && day[0].date == activeDate" (click)="onActiveDate(day[0].date)"><span>Свернуть</span></a>
-        <a class="default-cursor" *ngIf="!day[0]['Название'] && day[0].day !== -1"> Нет занятий </a>
+        <a class="default-cursor pc" *ngIf="!day[0]['Название'] && day[0].day !== -1"> Нет занятий </a>
+        <a class="default-cursor phone" *ngIf="!day[0]['Название'] && day[0].day !== -1"> Пусто </a>
       </div>
 
 

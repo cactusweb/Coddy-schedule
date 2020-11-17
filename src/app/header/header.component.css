@@ -46,6 +46,14 @@ p{color: #282828; text-align: center; align-self: end; font-size: 16px;}
     transform: translate(510px, -150%);
 }
 
+@media (max-width: 749px){
+    header{
+        padding: 10px 10px;
+    }
+
+    p{font-size: 14px;}
+}
+
 /* header img.bckg{
     position: absolute;
     width: 100%;

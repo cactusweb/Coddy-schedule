@@ -30,3 +30,17 @@ app-foot{
     width: 100%;
     position: relative;
 }
+
+@media (max-width: 1200px){
+    main img{
+        display: none;
+    }
+}
+
+@media (max-width: 749px){
+    main{
+        padding-top: 45px;
+    }
+
+    app-table{row-gap: 30px;}
+}

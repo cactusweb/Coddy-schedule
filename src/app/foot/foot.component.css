@@ -47,3 +47,37 @@ p{
 /* img{
     transform: translate(0px, 0px);
 } */
+
+@media (max-width: 1200px){
+    .info{
+        width: 712px;
+        bottom: -20px;
+        row-gap: 20px;
+    }
+
+    img{
+        display: none;
+    }
+
+    p{
+        font-size: 24px;
+    }
+    section{
+        height: 300px;
+    }
+}
+
+@media (max-width: 739px){
+    .info{
+        width: 100%;
+        padding: 5px;
+        bottom: 0px;
+    }
+
+    .btn{
+        padding: 19px 30px 15px;
+        line-height: 20px;
+        font-size: 18px;
+    }
+    p{text-align: left; width: 230px;}
+}
